@@ -30,6 +30,8 @@
     }
 
     .bubble {
+      text-decoration: none; /* Remove underline from bubbles */
+      color: inherit; /* Inherit text color from parent */
       width: 150px;
       height: 150px;
       border-radius: 50%;
@@ -58,12 +60,12 @@
 <div class="container">
   <div class="bubble" onclick="selectYear('1st YEAR')">1st YEAR</div>
   <div class="bubble" onclick="selectYear('2nd YEAR')">2nd YEAR</div>
-  
 </div>
 <div class="container">
-    <div class="bubble" onclick="selectYear('3rd YEAR')">3rd YEAR</div>
+  <div class="bubble" onclick="selectYear('3rd YEAR')">3rd YEAR</div>
   <div class="bubble" onclick="selectYear('4th YEAR')">4th YEAR</div>
 </div>
+
 <script>
   function selectYear(YEAR) {
     alert('You selected ' + YEAR);
