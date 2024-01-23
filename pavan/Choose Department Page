@@ -30,6 +30,8 @@
     }
 
     .bubble {
+      text-decoration: none; /* Remove underline from bubbles */
+      color: inherit; /* Inherit text color from parent */
       width: 150px;
       height: 150px;
       border-radius: 50%;
@@ -56,22 +58,27 @@
 <h1>Choose Departments</h1>
 
 <div class="container">
-  <div class="bubble" onclick="selectDepartment('CSE')">CSE</div>
-  <div class="bubble" onclick="selectDepartment('ISE')">ISE</div>
-  <div class="bubble" onclick="selectDepartment('EC')">EC</div>
+  <a href="sample5.html">
+    <div class="bubble">CSE</div>
+  </a>
+  <a href="sample5.html">
+    <div class="bubble">ISE</div>
+  </a>
+  <a href="sample5.html">
+    <div class="bubble">EC</div>
+  </a>
 </div>
 <div class="container">
-    <div class="bubble" onclick="selectDepartment('MECH')">MECH</div>
-  <div class="bubble" onclick="selectDepartment('AIDS')">AIDS</div>
-  <div class="bubble" onclick="selectDepartment('AIML')">AIML</div>
+  <a href="sample5.html">
+    <div class="bubble">MECH</div>
+  </a>
+  <a href="sample5.html">
+    <div class="bubble">AIDS</div>
+  </a>
+  <a href="sample5.html">
+    <div class="bubble">AIML</div>
+  </a>
 </div>
-<script>
-  function selectDepartment(department) {
-    alert('You selected ' + department);
-    // Add your logic here for handling the selected department
-  }
-</script>
 
 </body>
 </html>
-
