@@ -51,6 +51,11 @@
       transform: scale(1.1);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
+
+    /* Additional Style: Remove underline for anchor */
+    .bubble a {
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
@@ -58,24 +63,24 @@
 <h1>Choose Departments</h1>
 
 <div class="container">
-  <a href="sample5.html">
+  <a href="sample5.html" style="text-decoration: none;">
     <div class="bubble">CSE</div>
   </a>
-  <a href="sample5.html">
+  <a href="sample5.html" style="text-decoration: none;">
     <div class="bubble">ISE</div>
   </a>
-  <a href="sample5.html">
+  <a href="sample5.html" style="text-decoration: none;">
     <div class="bubble">EC</div>
   </a>
 </div>
 <div class="container">
-  <a href="sample5.html">
+  <a  href="sample5.html" style="text-decoration: none;">
     <div class="bubble">MECH</div>
   </a>
-  <a href="sample5.html">
+  <a href="sample5.html" style="text-decoration: none;">
     <div class="bubble">AIDS</div>
   </a>
-  <a href="sample5.html">
+  <a href="sample5.html" style="text-decoration: none;">
     <div class="bubble">AIML</div>
   </a>
 </div>
