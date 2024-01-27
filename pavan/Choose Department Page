@@ -69,19 +69,13 @@
   <a href="sample5.html" style="text-decoration: none;">
     <div class="bubble">ISE</div>
   </a>
-  <a href="sample5.html" style="text-decoration: none;">
-    <div class="bubble">EC</div>
-  </a>
 </div>
 <div class="container">
   <a  href="sample5.html" style="text-decoration: none;">
+    <div class="bubble">EC</div>
+  </a>
+  <a href="sample5.html" style="text-decoration: none;">
     <div class="bubble">MECH</div>
-  </a>
-  <a href="sample5.html" style="text-decoration: none;">
-    <div class="bubble">AIDS</div>
-  </a>
-  <a href="sample5.html" style="text-decoration: none;">
-    <div class="bubble">AIML</div>
   </a>
 </div>
 
