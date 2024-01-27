@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .candidate-list {
+            list-style-type: none;
+            padding: 0;
+            width: 200px;
+        }
+
+        .candidate-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            transition: transform 0.3s;
+        }
+
+        .candidate-item:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        .vote-count {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // JavaScript function to display the votes for each candidate
+        function displayVotes() {
+            // Get the votes from local storage
+            var votes = JSON.parse(localStorage.getItem('votes')) || {};
+
+            // Display the votes for each candidate
+            for (var candidateId in votes) {
+                var voteCountElement = document.getElementById('vote-count-' + candidateId);
+                if (voteCountElement) {
+                    voteCountElement.innerText = votes[candidateId];
+                }
+            }
+        }
+
+        // Call the displayVotes function when the page loads
+        window.onload = function() {
+            displayVotes();
+
+            // Set up event listener to update votes when changes occur
+            window.addEventListener('storage', function() {
+                displayVotes();
+            });
+        };
+    </script>
+</head>
+<body>
+
+    <ul class="candidate-list">
+        <li class="candidate-item">
+            <span>Candidate 1</span>
+            <span class="vote-count" id="vote-count-1">0</span>
+        </li>
+        <li class="candidate-item">
+            <span>Candidate 2</span>
+            <span class="vote-count" id="vote-count-2">0</span>
+        </li>
+        <li class="candidate-item">
+            <span>Candidate 3</span>
+            <span class="vote-count" id="vote-count-3">0</span>
+        </li>
+        <!-- Add more candidates as needed -->
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap");
+
+:root{
+    --first--color:hsl(82,60%,28%);
+    --title--color:hsl(0,0%,15%);
+    --text--color:hsl(0,0%,35%);
+    --body--color:hsl(0,0%,95%);
+    --container--color:hsl(0,0%,100%);
+
+
+--body--font: "poppins",sans-serif;
+--h2-font-size:1.25rem;
+--small-font-size:.813rem;
+}
+
+@media screen and (min-width: 1120px){
+    :root{
+        --h2-font-size:1.5rem;
+        --small-font-size:.875rem;
+    }
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.background{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./association_of_world_election_bodies.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(10px);
+}
+.content{
+    margin-top: 60px;
+    color: 60px;
+    text-align: center;
+    display: flex;
+    gap: 2rem;
+    padding: 0 4rem;
+    margin-left: 350px;
+}
+.content h1{
+    align-items: center;
+    color: #fcbf49 ;
+    font-size: 95px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+
+}
+
+.container{
+    display: grid;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+}
+
+.card__container{
+    display: grid;
+    row-gap: 3.5rem;
+    margin-top: -60px;
+}
+
+.card__article{
+    position: relative;
+    overflow: hidden;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-right: 20px;
+}
+
+.card__img{
+    width: 328px;
+    border-radius: 1.5rem;
+}
+.card__data{
+    width: 280px;
+    background-color: var(--container--color);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px hsla(0,0%,0%,.15);
+    border-radius: 1rem;
+    position: absolute;
+    bottom: -9rem;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    opacity: 0;
+    transition: opacity 1s 1s;
+}
+.card__description{
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: .25rem;
+}
+
+.card__title{
+    font-size: var(--h2-font-size);
+    font-weight: 500;
+    color: var(--title--color);
+    margin-bottom: .75rem;
+}
+
+.card__button{
+    text-decoration: none;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    color: var(--first--color);
+}
+
+.card__button:hover{
+    text-decoration: underline;
+    color: red;
+
+}
+
+.card__article:hover .card__data{
+    animation: show-data 1s forwards;
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.card__article:hover{
+    animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover){
+    animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover)  .card__data{
+    animation: remove-data 1s forwards;
+}
+
+
+@keyframes show-data{
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(-7rem);
+    }
+}
+
+@keyframes remove-overflow{
+    to{
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data{
+    0%{
+        transform: translateY(-7rem);
+    }
+    50%{
+        transform: translateY(-10rem);
+    }
+    100%{
+        transform: translateY(.5rem);
+    }
+}
+
+@keyframes show-overflow{
+    0%{
+        overflow: initial;
+        pointer-events: none;
+    }
+    50%{
+        overflow: hidden;
+    }
+}
+
+/*small devices*/
+@media screen and (max-width:340px){
+    .container{
+        margin-inline: 1rem;
+    }
+
+
+    .card__data{
+        width: 250px;
+        padding: 1rem;
+    }
+}
+/*medium devices*/
+@media screen and (min-width: 768px){
+    .card__container{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1.5rem;
+    }
+
+}
+
+/*large devices*/
+@media screen and (min-width:1120px){
+    .container{
+        height: 100vh;
+    }
+    .card__container{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .card__img{
+        width: 348px;
+    }
+    .card__data{
+        width: 316px;
+        padding-inline: 2.5rem;
+    }
+}
+
+#resulti{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+#wrapper{
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+#admini{
+    width: 300px;
+    margin-left: 10px;
+  
+
+}
+
+#userini{
+    width: 300px;
+}

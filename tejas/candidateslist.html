@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #add8e6;
+        }
+
+        .candidate-list {
+            list-style-type: none;
+            padding: 0;
+            width: 200px;
+        }
+
+        .candidate-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            border: 2px solid black;
+            transition: transform 0.3s;
+        }
+
+        .candidate-item:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        .vote-button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        // JavaScript function to handle voting
+        function vote(candidateId) {
+            // Check if the user has already voted
+            var userId = getUserId();
+            if (hasUserVoted(userId)) {
+                alert('You have already voted!');
+                return;
+            }
+
+            var voteButton = document.getElementById('vote-button-' + candidateId);
+
+            // Get the current votes from local storage
+            var currentVotes = JSON.parse(localStorage.getItem('votes')) || {};
+                
+            // Increment the vote count for the candidate
+            currentVotes[candidateId] = (currentVotes[candidateId] || 0) + 1;
+
+            // Save the updated votes to local storage
+            localStorage.setItem('votes', JSON.stringify(currentVotes));
+
+            // Mark that the user has voted
+            markUserAsVoted(userId);
+
+            // Disable all vote buttons
+            var voteButtons = document.getElementsByClassName('vote-button');
+            for (var i = 0; i < voteButtons.length; i++) {
+                voteButtons[i].disabled = true;
+            }
+        }
+
+        // Function to get a unique user identifier (for demonstration purposes)
+        function getUserId() {
+            // In a real-world scenario, you would use a more secure method to generate a user identifier
+            // For demonstration purposes, using a random number here
+            return Math.floor(Math.random() * 1000000).toString();
+        }
+
+        // Function to check if the user has voted
+        function hasUserVoted(userId) {
+            var votedUsers = JSON.parse(localStorage.getItem('votedUsers')) || [];
+            return votedUsers.includes(userId);
+        }
+
+        // Function to mark the user as voted
+        function markUserAsVoted(userId) {
+            var votedUsers = JSON.parse(localStorage.getItem('votedUsers')) || [];
+            votedUsers.push(userId);
+            localStorage.setItem('votedUsers', JSON.stringify(votedUsers));
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Candidates List</h1>
+    
+    <ul class="candidate-list">
+        <li class="candidate-item">
+            <span>Candidate 1</span>
+            <button id="vote-button-1" class="vote-button" onclick="vote(1)">Vote</button>
+        </li>
+        <li class="candidate-item">
+            <span>Candidate 2</span>
+            <button id="vote-button-2" class="vote-button" onclick="vote(2)">Vote</button>
+        </li>
+        <li class="candidate-item">
+            <span>Candidate 3</span>
+            <button id="vote-button-3" class="vote-button" onclick="vote(3)">Vote</button>
+        </li>
+        <!-- Add more candidates as needed -->
+    </ul>
+
+</body>
+</html>
