@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.page {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+}
+
+.card {
+    background-color: white;
+    border: 2px solid #00008b;
+    padding: 20px;
+    margin: 30px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    
+}
+.logout{
+    border: 1px solid white;
+    
+    color: #FFC000;
+    margin-top: -50px;
+    padding-right:0px;
+    padding: 0px;
+    margin: 30px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+
+}
+
+p {
+    margin-top: 100px;
+    color:#FFC000
+}
+
+.left {
+    border-radius: 1px 0 0 1px;
+    background-color: white;
+    border: 2px solid #00008b;
+}
+
+.right {
+    border-radius: 1px 1px 1px 1px;
+    background-color: white;
+    border: 2px solid #00008b;
+}
+.logout-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgb(209, 170, 117);
+
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
